@@ -96,7 +96,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     public boolean isFull()
     {
         // Replace the next line
-        return this.slots.size() != 0;
+        return this.utilizedSlots() == this.totalSlots();
     }
 
     /**
@@ -106,7 +106,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
      */
     public boolean isEmpty()
     {
-        return this.slots.size() == 0;
+         return this.slots.size() == 0;
     }
 
     /**
@@ -180,7 +180,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     {
         Inventory copy = new Inventory(this.totalSlots());
 
-        copy.setSlots(this.totalSlots);
+        copy.slots = new ArrayList<>(this.slots);
 
         return copy;
     }
@@ -228,7 +228,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         strBld.append(summaryLine);
 
         // Add the missing loop
-        for (Inventory inv : this) {
+        for (ItemStack inv : this) {
             summaryLine += inv + String.format("%n");
         }
 
