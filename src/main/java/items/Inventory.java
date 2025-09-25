@@ -124,7 +124,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
 
         while(it.hasNext()){
             ItemStack current = it.next();
-            if (current.getItem().equals(key.getItem)) 
+            if (current.getItem().equals(key.getItem())) 
             {
                 return current;
             }
