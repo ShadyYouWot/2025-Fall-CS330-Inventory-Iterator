@@ -180,8 +180,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     {
         Inventory copy = new Inventory(this.totalSlots());
 
-        copy.setSlots(this.slots);
-        copy.setCapacity(this.capacity);
+        copy.setSlots(this.totalSlots);
 
         return copy;
     }
