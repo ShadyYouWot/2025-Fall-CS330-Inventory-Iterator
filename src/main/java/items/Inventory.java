@@ -229,8 +229,8 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         strBld.append(summaryLine);
 
         // Add the missing loop
-        for (Inventory inv: this) {
-            summaryLine += inv . String.format("%n");
+        for (Inventory inv : this) {
+            summaryLine += inv + String.format("%n");
         }
 
         return strBld.toString();
