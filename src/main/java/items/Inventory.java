@@ -127,7 +127,6 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
             {
                 return it.next();
             }
-            it.next();
         }
 
         return null;
