@@ -120,6 +120,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     public ItemStack findMatchingItemStack(ItemStack key)
     {
         // Adapt the logic from Assignment 1
+        if (key == null) return null;
         Iterator<ItemStack> it = this.slots.iterator();
 
         while(it.hasNext()){
