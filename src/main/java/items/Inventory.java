@@ -227,8 +227,11 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         strBld.append(summaryLine);
 
         // Add the missing loop
-        for (ItemStack inv : this) {
-            summaryLine += inv + String.format("%n");
+        Iterator<ItemStack> it = this.iterator();
+        while (it.hasNext()) 
+        {
+            ItemStack stack = it.next();
+            strBld.append(stack).append(String.format("%n"));
         }
 
         return strBld.toString();
